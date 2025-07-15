@@ -1,0 +1,164 @@
+/*colocar aqui tudo o que todas as páginas tiverem em comum, como o cabeçalho e o footer*/
+body{
+  background-color: #fffaf5; 
+ margin: 0;
+  min-width:300px; 
+}
+
+/*------------- barra de navegação ----------*/
+header {
+  position: sticky; top:0; 
+  background-color: #fffaf5; 
+  width:100%; 
+  z-index: 50; 
+}
+
+.menu{
+  height: 60px; 
+  display: flex;
+  margin: 0 10% 0 10%;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.menu>a{
+  margin: 10px;
+  line-height: 40px;
+  padding: 0 10px 0 10px; 
+  font-family: serif;
+  text-decoration: none;
+  color: black; 
+  font-size:15px; 
+}
+.menu>a:nth-child(3){
+  font-family:  "Times New Roman", Times, serif;
+  color: #ab0707;   
+  font-size:20px; 
+}
+
+.menu>a:hover{   
+  background-color:#f5ebe0;
+
+}
+
+
+h1{
+  display: flex;
+  justify-content: center; 
+  padding:20px;
+}
+
+button{
+  background-color:  #f5ebe0;
+  border: none; 
+  padding: 2% 4% ; 
+  border-radius: 50px;
+  text-align:center; 
+}
+button:hover{
+   transform: scale(110%);
+}
+
+/*------------ footer ----------*/
+
+footer{
+  display: flex; 
+  position: relative;
+  text-decoration: none;
+  padding: 0 40px; 
+  background: #F5EBE0;
+  color: #575552;
+  justify-content: space-between;
+
+}
+
+#contacts>ul{
+   list-style: none;
+}
+#contacts>ul>li>a{
+  text-decoration: none;
+}
+
+#social-media{
+  float: center; 
+  text-align:center; 
+}
+
+#social-media > img{
+  margin: 20px;
+  opacity: 70%;
+}
+
+
+/*--------   Responsivo  -------------*/
+/*--------  phone screen  -------------*/
+
+@media screen and (max-width: 600px){
+
+  .menu{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    font-size:10px; 
+    margin:0;
+
+  } 
+  .menu>a{
+    padding:0;
+    margin: 5px;
+    line-height: 40px;
+    font-size:10px; 
+  }
+  
+  
+  /* ---------- footer ----------*/
+  footer{
+    width:100%;
+    padding-left:20px;
+  }
+
+  #contacts > h4{
+     font-size:12px; 
+  }
+  #contacts > ul{
+    font-size:10px; 
+    padding-left:20px;
+  }
+  
+  #social-media{
+    flex-flow: row;
+    font-size:10px; 
+    max-width:100%;
+  }
+  #social-media > h4{
+     font-size:12px; 
+  }
+  #social-media > img{ /*cada imagem*/
+    width: 18px;
+    height: auto;
+    margin: 5px;
+  }
+  
+}
+
+
+/*--------   Responsivo  -------------*/
+
+/*--------   tablet screen  -------------*/
+@media screen and (min-width: 600px) and (max-width:900px){
+
+.menu{
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  font-size:15px; 
+  margin:0;
+ /* width:100%;*/
+} 
+.menu>a{
+  padding:1% 2%;
+  margin: 5px;
+  line-height: 40px;
+  font-size:15px; 
+}
+

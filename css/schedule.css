@@ -1,0 +1,237 @@
+#exhibitions{ /*3 exposicoes juntas*/
+  display: grid;
+  flex-flow: column;
+  grid-template-columns:repeat(3, 1fr); /*3 colunas de igual medida*/
+}
+#exhibitions> div{ /*orientacao dentro de cada exposicao*/
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left:50px;
+  margin-right:50px;
+  padding-top:25px;
+  padding-bottom:25px;
+  background-color: #f5ebe0;
+}
+#exhibitions> div> h4{
+   text-transform: uppercase;
+}
+#exhibitions> div> p{
+  margin:0; 
+  line-height: 32px;
+}
+#exhibitions> div> img{
+  width:90%; 
+  height:auto; 
+}
+
+/*--------------- fazer ligação às exposições no index  ------------*/
+/*------- falta adicionar o <a href> -------*/
+#exhibitions> div:hover{
+ transform: scale(90%);
+}
+
+/*--------------- calendario ------------*/
+
+
+#coming-soon {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  background: #F5EBE0;
+  margin-top: 40px;
+}
+
+#coming-soon>.weekly {
+  /*dias da semana, conjunto*/
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex-wrap: wrap;
+}
+
+#coming-soon>.weekly>p {
+  /*dias da semana, individual*/
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  height: 50px;
+  margin: 5px;
+  margin-top: 15px;
+  border-bottom: solid;
+  border-bottom-color: #C1B9B1;
+}
+
+#coming-soon>ul {
+  /*calendario geral, igual para todos*/
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /*7 dias da semana, todos com a mesma medida*/
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+#coming-soon>ul>li:first-child {
+  /*para colocar onde o mês comeca*/
+  grid-column: 5;
+}
+
+
+#coming-soon>ul>li {
+  /*para cada box*/
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: #FFFAF5;
+  width: 200px;
+  height: 150px;
+  margin: 5px;
+  /*transition: 400ms;*/
+}
+
+#coming-soon>ul>li>time {
+  /*para a data/numero*/
+  display: flex;
+  margin: 10px;
+  font-size: 28px;
+  color: #ab0707;
+}
+
+#coming-soon>ul>li>div {
+  /*para a info do evento*/
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #222222;
+}
+
+#coming-soon>#caption{
+  display:none;
+}
+
+
+/*-------- Responsivo --------*/
+/*-------- smartphone --------*/
+
+@media screen and (max-width: 600px) {
+  #exhibitions {
+    display: block;
+    width: auto;
+  }
+
+  #exhibitions>div {
+    margin-bottom: 20px;
+  }
+
+  #coming-soon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #coming-soon>.weekly {
+    /*conjunto dias da semana*/
+    flex-flow: row;
+  }
+
+  #coming-soon>.weekly>p {
+    /*dias da semana individuais*/
+    margin: 5px;
+    width: 40px;
+  }
+
+  #coming-soon>ul>li {
+    /*cada box*/
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #coming-soon>ul>li.evn {
+    /*para cada box de eventos*/
+    background: #ab070743;
+  }
+  #coming-soon>ul>li.cls {
+    /*para cada box de eventos*/
+    background: #ab07071e;
+  }
+
+  #coming-soon>ul>li>time {
+    /*numero / dia*/
+    font-size: 18px;
+  }
+
+  #coming-soon>ul>li>div {
+    /*info do evento*/
+    display: none;
+  } 
+
+  #coming-soon>div>p#event{
+    /*legenda - eventos*/
+    background: #ab070743;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 50px;
+  text-align: center;
+  }
+  #coming-soon>div>p#closed{
+    /*legenda - fechado*/
+    background: #ab07071e; 
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 50px;
+  text-align: center;
+  }
+
+  #coming-soon>#caption{ 
+    /*apenas aparece em formato telemovel*/
+    display:block;
+  }
+
+}
+
+/*--- tablet ---*/
+@media screen and (min-width: 601px) and (max-width:1023px){
+  #exhibitions > div{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding:10px;
+  }
+  #exhibitions > .exhibition1{
+    max-width:100%;
+  }
+  
+  #exhibitions> div> img{
+    width:90%; 
+    height:auto; 
+  }
+  #coming-soon{
+    display: flex;
+    justify-content: center;
+  }
+  #coming-soon> .weekly{ /*conjunto dias da semana*/
+    flex-flow: row;
+  }
+  #coming-soon> .weekly > p{ /*dias da semana individuais*/
+    margin: 5px;
+    width: 110px;
+  }
+  #coming-soon> ul > li{ /*cada box*/
+    margin: 5px;
+    width: 110px;
+    height: 125px;
+  }
+  #coming-soon> ul > li > time{ /*numero / dia*/
+    font-size:20px; 
+  }
+  #coming-soon> ul > li > div{ /*info do evento*/
+    margin:5px;
+  }
+}

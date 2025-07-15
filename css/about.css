@@ -1,0 +1,269 @@
+.container{
+  display: grid;
+
+  grid-template-columns: repeat(3, [col-start] 1fr);
+ grid-template-rows: repeat( 12, 200px);
+  grid-auto-rows: 200px;
+  grid-template-areas: 
+    " sl sl ab"
+    " sl sl  ab"
+    " sl sl  ab"
+    " sl sl  ab"
+
+    "qs lq  ab"
+    "qs  lq  ct"
+    "qs  lq  ct"
+
+    "ri ri  sp"
+    
+
+    "lm  lm sp"
+    "lm  lm  sp"
+    "lm lm  sp"
+
+}
+
+/*--------------- Imagens Mockups ------------*/
+.SalaExposicoes{
+ grid-area: sl; 
+  margin-bottom: 40px; 
+  position:relative; 
+  
+
+}
+.SalaExposicoes>img{
+  width: 100%; 
+  height: auto; 
+  position:absolute; 
+  transition: opacity 1s;
+
+
+ }
+
+
+.questions{
+   grid-area: qs; 
+   margin-left:100px; 
+  padding: 40px;
+
+}
+
+.questions>div{
+  padding: 20px;
+}
+
+
+/*--------------- formulário 3 espaços ------------*/
+.leave{
+  grid-area: lq; 
+  margin:40px;
+}
+.leave>form>div{
+  margin-bottom:10px;
+}
+/*--------------- formulario apenas email ------------*/
+.receive_info{
+  border-top:  1px solid #000000; /*para criar linhas*/
+  border-bottom:  1px solid #000000;
+   grid-area: ri; 
+  margin-left:100px; 
+  padding: 40px;
+}
+input{
+  width:70%; 
+
+    padding: 20px;
+    border: 1px solid  #f5ebe0;
+
+}
+
+/*--------------- butões dos formularios ------------*/
+ button{
+margin:auto;  /*centralizar horizontal e verticalmente*/
+
+}
+.leave>form>button {
+  margin-top: 20px; 
+}
+.receive_info>form>button {
+  margin-left: 2%; 
+}
+
+/*--------------- mapa ------------*/
+.location-map{
+   grid-area: lm;
+
+  margin-left:100px; 
+  padding: 40px 0 0 0; 
+/*align-items: center; */
+
+}
+iframe {
+  padding-top:20px; 
+  width:100%;
+}
+
+/*--------------- Barra Lateral ------------*/
+.about-us, .contacts, .sponsors{
+  margin-left:80px;
+   margin-right:80px; 
+  background-color: #F5EBE0;
+  padding:60px; 
+}
+
+/*--------------- informação + imagem ------------*/
+.about-us{
+   grid-area: ab; 
+
+}
+.gallery-description{
+ justify-content:center; 
+}
+.gallery-description>img{
+   padding-top:20px; 
+   width:90%;
+   display:block; 
+   margin:auto; 
+ }
+/*--------------- ------------*/
+.contacts{
+   grid-area: ct; 
+
+}
+.contacts>ul>li{
+  padding: 20px; 
+}
+.sponsors{
+
+   grid-area: sp; 
+
+}
+.sponsors>img{
+  display: block; 
+
+
+  width:40%; 
+  height:auto; 
+  padding:4%;
+  margin:auto; 
+
+}
+
+/*-------------  Responsivo   1coluna------------*/
+
+/*-------------  phone screen------------*/
+  @media screen and (max-width: 600px) {
+   /* main{
+      width:100%; 
+    padding:40px;
+    }*/
+
+    /*--------------- reajuste da grelha ------------*/
+    .container { 
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: repeat(15, 200px);
+     grid-auto-rows: 200px; 
+  grid-template-areas:
+    "sl "
+    "sl "
+
+    "ab "
+    "ab "
+    "ab "
+    "ab "
+
+    "qs"
+    "qs"
+     "lq "
+     "lq " 
+
+    "ri "
+     "ri "
+
+    "lm "
+    "lm "
+
+    }
+   .contacts{
+     display:none; 
+   }
+   .sponsors{
+      display:none;
+    }
+    .SalaExposições{
+    grid-area: sl;
+      margin-bottom: 40px; 
+
+    }
+    .about-us{
+       grid-area: ab;
+      margin-left:40px ;
+       margin-right:40px;
+      margin-bottom:0px;
+      padding: 40px;
+    }
+
+    .about-us> .gallery-description{
+      font-size: 80%; 
+    }
+
+    .about-us> .gallery-description>img{
+       width:70%;
+    }
+
+    .questions{
+       grid-area: qs;
+       margin: 40px; 
+      padding: 20px;
+
+    }
+    .questions> div{
+      padding:10px; 
+      font-size: 80%;    
+    }
+
+    .leave{
+      grid-area: lq;
+      padding:20px; 
+    }
+
+    .leave> label{
+       font-size: 80%;
+    }
+
+  input {
+    width:95%; 
+    padding:5px;  
+
+  }
+  .receive_info{
+  border-top:  1px solid #000000;
+  border-bottom:  1px solid #000000;
+   grid-area: ri; 
+    margin: auto; 
+    padding: 20px 60px;
+  }
+  .receive_info>form>button{
+    margin:20px 0; 
+    padding:10px 20px; 
+   }
+
+
+  .location-map{
+       grid-area: lm;
+    margin:0 40px; 
+    padding:20px; 
+ }
+
+    .location-map>h2{
+       margin-top:0; 
+     }
+
+
+  iframe {
+
+      width:100%;
+    }
+
+}

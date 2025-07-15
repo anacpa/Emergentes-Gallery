@@ -1,0 +1,362 @@
+#tickets{
+  display:flex;
+  margin-left:16.7%;  /*grelha é cerca de 6.5 retangulos - 100/6=16.7*/
+  margin-right:16.7%;
+  margin-top:8.4%; /*16.7/2=8.4*/
+  margin-bottom:8.4%;
+}
+
+.information{
+  display: grid;
+  width: 50%;
+  grid-template-columns:repeat(4, 1fr); /*4 colunas*/
+  grid-template-rows:250px 1fr; /*2 linhas*/
+}
+
+
+.price{
+  grid-column: 2;
+  grid-row: 1; 
+  font-weight: bolder;
+}
+.buyer{
+  grid-column: 3;
+  grid-row: 1; 
+}
+.detail-price{
+  grid-column: 3 / 5;
+  grid-row: 1; 
+  font-size:10px; 
+  margin-top: 150px;
+} 
+
+.admission-title{
+  grid-column: 1;
+  grid-row: 2;
+}
+.free-information{
+  grid-column: 2 / 5;
+  grid-row: 2;
+  margin-left: 20px;
+} 
+
+.imagem1{
+  margin-left: calc(50% - 351px); 
+  /*calcula o espaço que sobra entre a imagem e a margem de .tickets*/
+} 
+
+
+
+#opening-hours{ /*grupo todo*/
+  display: flex;
+  flex-flow: column;
+  background: #F5EBE0;
+  margin-bottom:8.4%;
+}
+#opening-hours > h2{ /*titulo*/
+  margin:70px;
+  margin-left:16.7%;
+}
+
+#hours-information{
+  line-height: 200%;
+  margin-left:16.7%;
+}
+#hours-information:last-child{  /*está a afetar as restantes infos*/
+  font-weight: bolder; /*???? suposto ser só come visit us*/
+  margin-bottom:70px;
+}
+
+/* ----------------- calendario + formulario -----------------*/
+
+#book-visit{
+  display: grid;
+  grid-template-columns:1fr 1fr; /*2 colunas*/
+}
+#book-visit> h2{ /*titulo*/
+  grid-column:2;
+  display:flex;
+  justify-content: flex-end;
+  margin-right:16.7%;
+}
+
+#calendar{
+  grid-column:1;
+  margin-left:8.4%; /*16.7/2*/
+  margin-right:8.4%;
+  border: solid;
+  border-color:#C1B9B1;
+}
+.calendar-top{
+  margin:0;  /*continua com margens*/
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+  background: #575552;
+  color:#FFFAF5;
+}
+.weekly{ /*dias da semana*/
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  background: #F5EBE0;
+  border-bottom: solid;
+  border-bottom-color:#C1B9B1;
+}
+.calendar-day>ul{ /*numeros do calendario, conjunto*/
+  display:grid;
+  grid-template-columns:repeat(7, 1fr); /*7 dias da semana, todos mesma medida*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.calendar-day>ul>li{ /*para cada numero*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58.56px;
+}
+.calendar-day>ul>li:hover{ /*muda de cor fundo quando está pos cima*/
+  background: #F5EBE0;
+  font-size:20px;
+}
+.calendar-day>ul>li:first-child{ /*para colocar onde o mês comeca*/
+  grid-column: 5;
+}
+
+
+
+/* quando a data for selecionado muda */
+.selecionada{
+  background: #575552;
+  color:#FFFAF5;
+}
+
+
+
+form{
+  margin-left:8.4%; /*16.6/2*/
+  margin-right:16.7%; 
+  grid-column: 2;
+  /*grid para o formulario*/
+  display: grid;
+  grid-template-rows:100px 1fr 100px; 
+}
+.number-of-people{
+  grid-row: 1;
+  margin-right: 16.7%;
+  display: flex;
+  flex-flow: column;
+}
+
+.number-of-people>label{ /*sub-titulo*/
+  font-size:18px;
+  margin-bottom:10px;
+}
+.number-of-people>input{ /*box */
+  border: 1px solid  #C1B9B1;
+  margin-left:8.4%;
+  padding: 20px;
+}
+
+.birth-date{
+  grid-row:2;
+}
+
+.birth-date> label{ /*sub-titulo*/
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.birth-date> .date{ /*box*/
+  margin-left:8.4%; /*16.6/2*/
+  margin-right:16.7%;
+}
+
+/*para cada caixa*/
+.birth-date> .date > input{ 
+  border: 1px solid  #C1B9B1;
+  width: 48%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 5px;
+} 
+
+.email{
+  grid-row:3;
+  display: flex;
+  flex-flow: column;
+  margin-right:16.7%;
+}
+.email>label{
+  font-size:18px;
+  margin-bottom:10px;
+}
+.email >input{ 
+  border: 1px solid  #C1B9B1;
+  margin-left:8.4%;
+  padding: 20px;
+}
+
+form>button{
+  grid-column: 1;
+  grid-row: 4;
+  height: 40px;
+  width:100px;
+  margin: 15px 8.4%;
+  border-radius: 50px;
+  align-content:center; 
+}
+
+#info-submit{
+  display: none;
+  grid-column: 1;
+  grid-row: 4;
+  font-size:12px;
+  width: 60%;
+  margin-left: calc(100px + 16.7%);
+  margin-top: 30px ;
+}
+#info-submit> p{
+  margin-top: 0;
+}
+
+/* ----------------- acessibilidade  -----------------*/
+#accessibility{
+margin:8.4%;
+display: flex;
+}
+#accessibility > #contentor{
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    't img'
+  ;
+}
+#contentor > #text{
+  grid-area:t;
+  margin-right: 8.4%;
+  height: 400px;
+}
+#contentor > #imagem{
+  display: flex;
+  grid-area:img;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/*--------------------- Responsivo ---------------------*/
+/*--- smartphone ---*/
+@media screen and (max-width: 600px) {
+  #tickets{
+    margin:0;
+  }
+  .information{
+    width:100%;
+  }
+  .admission-title{
+    grid-column:1/5;
+    grid-row: 2;
+  }
+  .admission-title > h2{
+    display: flex;
+    justify-content: center;
+    margin:30px;
+  }
+  .free-information{
+    grid-row: 3;
+    grid-column:1/5;
+    margin: 8.4%; 
+    margin-top:0;
+  }
+  .imagem1{
+    display:none;
+  }
+
+  #opening-hours > h2{
+    display: flex;
+    justify-content: center;
+    margin:30px;
+  }
+  #opening-hours > #hours-information{
+    margin:0;
+  }
+  #opening-hours > #hours-information > p{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #book-visit{
+    display: block;
+  }
+  #book-visit > h2{
+    justify-content: center;
+    margin-right:0;
+  }
+  
+  form{
+    margin-right:8.4%; 
+    margin-left:16.7%;
+  }
+  form > .number-of-people{
+    padding-bottom: 15px;
+  }
+  form > #info-submit{
+    width: 50%;
+  }
+    
+  #calendar{
+    margin-bottom: 50px;
+  }
+
+  #accessibility > #contentor{
+    display:grid;
+    grid-template-columns: 1fr;
+  }
+  #contentor > #text{
+    height: 300px;
+    margin: 8.4%; 
+  }
+  #contentor > #text > h2{
+    display: flex;
+    justify-content: center;
+  }
+  #contentor > #imagem{
+    display: none;
+  }
+}
+
+
+/*--- tablet ---*/
+@media screen and (min-width: 601px) and (max-width:1023px){
+  #tickets{
+    margin:0;
+  }
+  .information{
+    width:100%;
+  }
+  .admission-title{
+    grid-column:1/5;
+    grid-row: 2;
+  }
+  .admission-title > h2{
+    display: flex;
+    justify-content: center;
+    margin:30px;
+  }
+  .free-information{
+    grid-row: 3;
+    grid-column:1/5;
+    margin: 8.4%; 
+    margin-top:0;
+  }
+  .imagem1{
+    margin-right: 8.4%;
+  }
+  
+  #info-submit{
+    width: 60%;
+  }
+  
+}
